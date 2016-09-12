@@ -1,24 +1,29 @@
 .new-tag-component {
     position: absolute;
     margin-top: 0px;
-    height: 40px;
-    min-width: 40px;
+    height: 50px;
+    min-width: 50px;
     background-color: salmon;
-    border-radius: 30px;
-    margin-left: -40px;
+    border-radius: 40px;
+    margin-left: -50px;
+    cursor: pointer;
 }
 .rotate {
 	transition: 100ms linear all;
 	transform: rotate(45deg);
 	margin-left: -20px;
 }
+.unrotate {
+    transition: 100ms linear all;
+    margin-left: -41px;
+}
 
 .input-style {
     border: 10px solid salmon;
-    border-radius: 30px;
+    border-radius: 40px;
     padding: 0px 20px 0px 0px;
-    height: 20px;
-    min-width: 0;
+    height: 30px;
+    min-width: 10;
     background-color: salmon;
     color: white;
     outline: none;
@@ -28,20 +33,20 @@
 .vertical {
 	display: block;
     background-color: white;
-    height: 30px;
-    min-width: 3px;
+    height: 40px;
+    width: 3px;
     position: absolute;
     top: 5px;
-    left: 19px;
+    left: 24px;
     border-radius: 5px;
 }
 .horizontal {
 	display: block;
     background-color: white;
     height: 3px;
-    min-width: 30px;
+    width: 40px;
     position: absolute;
-    top: 19px;
+    top: 24px;
     left: 5px;
     border-radius: 5px;
 }
