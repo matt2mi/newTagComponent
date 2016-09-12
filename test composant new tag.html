@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="new-tag-style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="demo-input-container">
+        <input id="demo-input" autofocus type="text" name="q" class="input-style">
+
+        <span id="new-tag-component" class="new-tag-component">
+            <span id="vertical" class="vertical"></span>
+            <span id="horizontal" class="horizontal"></span>
+        </span>
+    </div>
+
+    <script src="jquery-3.1.0.js"></script>
+    <script src="autoGrowInput.js"></script>
+    <script>
+        $(function(){
+            $('#demo-input').autoGrowInput({ 
+                minWidth: 0, 
+                maxWidth: function(){ 
+                    return $('#demo-input-container').width() - 40; 
+                }, 
+                comfortZone: 0 
+            });
+        });
+        $('#demo-input-container').click(function() {
+            $('#demo-input').autoGrowInput({ 
+                minWidth: 10, 
+                maxWidth: function(){ 
+                    return $('#demo-input-container').width() - 40; 
+                }, 
+                comfortZone: 0 
+            });
+            $('#demo-input').animate(
+                {
+                    'border-top-right-radius': 0,
+                    'border-bottom-right-radius': 0
+                }, 
+                100, 
+                function() {
+                    $(this).focus();           
+                });
+            
+            $('#new-tag-component').addClass('rotate');
+        });
+        $(window).resize(function(){ $('#demo-input').trigger('autogrow'); });
+
+        $(document).keypress(function(e) {
+            if(e.which == 13) {
+                $('body').append('<div id="demo-input-container"><input id="demo-input" autofocus type="text" name="q" class="input-style"><span id="new-tag-component" class="new-tag-component"><span id="vertical" class="vertical"></span><span id="horizontal" class="horizontal"></span></span></div>');
+            }
+        });
+    </script>
+</body>
+</html>
